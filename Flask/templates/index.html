@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+
+    <h1>This is a web page</h1>
+    <div style="height:20%;
+    width:80%;
+    border:1px solid #ccc;
+    font:16px/26px Georgia, Garamond, Serif;
+    overflow:auto;"
+    contenteditable="true" id="latex_code_input">
+      Paste Latex Code
+    </div>
+
+    <form method="POST">
+    <input name="text" type="hidden" id="latex_code_sender">
+    <input type="submit">
+    </form>
+
+    <script>
+        //----get latex code into input form---//
+        var latex_code_input = document.getElementById('latex_code_input');
+        var latex_code_sender = document.getElementById('latex_code_sender');
+        function latex_code_input_change() { 
+            latex_code_sender.value = latex_code_input.textContent;
+            console.log(latex_code_input.textContent)
+        }
+
+        if(window.addEventListener) {
+            // Normal browsers
+            latex_code_input.addEventListener('DOMSubtreeModified', latex_code_input_change, false);
+        } else
+        if(window.attachEvent) {
+            // IE
+            latex_code_input.attachEvent('DOMSubtreeModified', latex_code_input_change);
+        }
+        //----------------------------------//
+
+                
+
+
+    </script>
+
+    
+
+    
+</input>
+    
+</body>
